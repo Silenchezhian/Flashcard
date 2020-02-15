@@ -5,7 +5,7 @@
 ## Lab 1
 
 ### App Description
-`TODO://` The flashcard can toggle between the question side and answer side. If the correct option is chosen, the answer is revealed. If an incorrect option is chosen, the incorrect option disappears. 
+The flashcard can toggle between the question side and answer side. If the correct option is chosen, the answer is revealed. If an incorrect option is chosen, the incorrect option disappears. 
 
 ### App Walk-though
 <img src="http://g.recordit.co/NDJTcx8ugY.gif" width=200><br>
