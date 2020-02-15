@@ -16,22 +16,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTV-1J-13c">
-                                <rect key="frame" x="57" y="320" width="302" height="211"/>
+                                <rect key="frame" x="56" y="296" width="302" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Canberra" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIX-HW-pd5">
-                                        <rect key="frame" x="0.0" y="2" width="302" height="209"/>
+                                        <rect key="frame" x="-34" y="-14" width="370" height="238"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.73515369906125938" green="0.98039215690000003" blue="0.42117073926299436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="backgroundColor" red="0.53239961260000002" green="1" blue="0.68060983880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Australia?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-az-eAc">
-                                        <rect key="frame" x="0.0" y="2" width="302" height="209"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's the capital of Australia?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-az-eAc">
+                                        <rect key="frame" x="-34" y="-15" width="370" height="239"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.81452326336239533" green="0.98039215690000003" blue="0.84816405518141913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -42,12 +42,49 @@
                                     <outletCollection property="gestureRecognizers" destination="xGy-yp-uet" appends="YES" id="1Zl-se-BoF"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2i-PK-K7O">
+                                <rect key="frame" x="56" y="643" width="302" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                <state key="normal" title="Melbourne">
+                                    <color key="titleColor" red="0.53239961260000002" green="1" blue="0.68060983880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBtnTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RnA-CA-CDR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmD-fK-4sL">
+                                <rect key="frame" x="56" y="718" width="302" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                <state key="normal" title="Sydney">
+                                    <color key="titleColor" red="0.53239961260000002" green="1" blue="0.68060983880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBtnThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7DM-fe-R5O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz3-mm-2sX">
+                                <rect key="frame" x="56" y="567" width="302" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                <state key="normal" title="Canberra">
+                                    <color key="titleColor" red="0.53239961260000002" green="1" blue="0.68060983880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBtnOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XXp-yt-SHq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="iIX-HW-pd5" id="jCB-eQ-xhR"/>
+                        <outlet property="btn1" destination="nz3-mm-2sX" id="LPn-9H-f9O"/>
+                        <outlet property="btn2" destination="R2i-PK-K7O" id="rTo-tE-GfV"/>
+                        <outlet property="btn3" destination="NmD-fK-4sL" id="OjP-wc-w50"/>
+                        <outlet property="card" destination="eTV-1J-13c" id="gjV-Vq-TGp"/>
                         <outlet property="frontLabel" destination="tDG-az-eAc" id="JeS-7d-v94"/>
                     </connections>
                 </viewController>
@@ -58,7 +95,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="512" y="141"/>
+            <point key="canvasLocation" x="511.59420289855075" y="140.625"/>
         </scene>
     </scenes>
 </document>

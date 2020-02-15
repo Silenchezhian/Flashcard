@@ -5,10 +5,11 @@
 ## Lab 1
 
 ### App Description
-`TODO://` When the question label is clicked, the answer to the question is revealed.
+`TODO://` The flashcard can toggle between the question side and answer side. If the correct option is chosen, the answer is revealed. If an incorrect option is chosen, the incorrect option disappears. 
 
 ### App Walk-though
 <img src="http://g.recordit.co/NDJTcx8ugY.gif" width=200><br>
+<img src="http://g.recordit.co/yydvjMYApy.gif" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
@@ -17,6 +18,6 @@
 - [x] Build in logic to show the answer side when the card is tapped
 - [x] Push code to GitHub
 ## Optional
-- [ ] Toggle the flashcard between the question side and the answer side
-- [ ] Style the question and answer side of the card to better distinguish between the two sides
-- [ ] Add selectable multiple choice answers beneath the card
+- [x] Toggle the flashcard between the question side and the answer side
+- [x] Style the question and answer side of the card to better distinguish between the two sides
+- [x] Add selectable multiple choice answers beneath the card
