@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Flashcard
 //
-//  Created by Chelian Pandian on 2/14/20.
+//
 //  Copyright © 2020 Sahana Ilenchezhian. All rights reserved.
 //
 
@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btn1: UIButton!
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,7 @@ class ViewController: UIViewController {
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
         
+        
         if(frontLabel.isHidden){
             frontLabel.isHidden = false
         }
@@ -64,12 +66,40 @@ class ViewController: UIViewController {
         
     }
     
+    func updateFlashcard(question: String, answer: String, extraAnswer1: String, extraAnswer2: String){
+        
+        frontLabel.text = question
+        backLabel.text = answer
+        
+        btn2.setTitle(answer, for: UIControl.State.normal)
+        btn1.setTitle(extraAnswer1, for: UIControl.State.normal)
+        btn3.setTitle(extraAnswer2, for: UIControl.State.normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+    creationController.flashcardsController = self
+        
+        if segue.identifier == "EditSegue"{
+        creationController.initialQuestion = frontLabel.text
+        creationController.initialAnswer = backLabel.text
+        creationController.initialExtraAnswer1 = btn1.currentTitle
+        creationController.initialExtraAnswer2 = btn3.currentTitle
+            
+            
+        }
+    }
+    
     @IBAction func didTapBtnOne(_ sender: Any) {
-        self.frontLabel.isHidden = true
+        btn1.isHidden = true
     }
     
     @IBAction func didTapBtnTwo(_ sender: Any) {
-        btn2.isHidden = true
+        self.frontLabel.isHidden = true
     }
     
     @IBAction func didTapBtnThree(_ sender: Any) {
