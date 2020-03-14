@@ -1,4 +1,26 @@
 ## Simple Flashcard App
+## Lab 3
+
+### App Description
+Users can create a set of flashcards (with multiple choice options) and browse through them using previous and next buttons.Users can re-open the app and see previously created flashcards. Users can delete all flashcards until they reach the last flashcard of the deck. When they try to delete the last flashcard in the deck, an alert pops up informing them that they cannot perform this action. Users can edit existing flashcards without creating new ones.
+
+### App Walk-though
+<img src="http://recordit.co/DS2InxxBez.gif" width=200><br>
+<img src="http://g.recordit.co/mkC40aI2Fg.gif" width=200><br>
+<img src="http://g.recordit.co/rsWBXF4EA6.gif" width=200><br>
+
+## Required
+- [x] User can browse through multiple flashcards
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+
+## Optional
+- [x] User can delete a flashcard
+- [x] User can edit existing flashcard
+- [x] User can store multiple choice questions
+
+## Extra Features
+- [x] An alert pops up when Users try to delete the last flashcard of the deck
 
 ## Lab 2
 
