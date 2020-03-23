@@ -33,9 +33,15 @@ class ViewController: UIViewController {
     
     var currentIndex = 0
     
+    //remembers correct answer
+    var correctAnswerButton: UIButton!
+    var extraAnswerOneButton: UIButton!
+    var extraAnswerTwoButton: UIButton!
+    
     override func viewWillAppear(_ animated: Bool){
          super.viewWillAppear(animated)
          
+        
          //main flashcard
          card.alpha = 0.0
          card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
@@ -52,15 +58,15 @@ class ViewController: UIViewController {
          UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
              
              //card
-             self.card.alpha = 0.0
+             self.card.alpha = 1.0
              self.card.transform = CGAffineTransform.identity
              
             //buttons
-            self.btn1.alpha = 0.0
+            self.btn1.alpha = 1.0
             self.btn1.transform = CGAffineTransform.identity
-            self.btn2.alpha = 0.0
+            self.btn2.alpha = 1.0
             self.btn2.transform = CGAffineTransform.identity
-            self.btn3.alpha = 0.0
+            self.btn3.alpha = 1.0
             self.btn3.transform = CGAffineTransform.identity
          })
      }
@@ -103,6 +109,7 @@ class ViewController: UIViewController {
         
         if flashcards.count == 0 {
             updateFlashcard(question: "What's the capital of Australia?", answer: "Canberra", extraAnswer1: "Melbourne", extraAnswer2: "Sydney", isExisting: false)
+            //currentIndex = currentIndex + 1
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -143,7 +150,7 @@ class ViewController: UIViewController {
             flashcards.remove(at: currentIndex)
         }
         
-        else if flashcards.count == 1{
+        else if flashcards.count == 1 {
             let alert = UIAlertController(title: "Flashcard cannot be deleted", message: "You cannot delete the last flashcard in the deck", preferredStyle:UIAlertController.Style.alert)
             present(alert, animated: true)
             
@@ -197,13 +204,33 @@ class ViewController: UIViewController {
         backLabel.text = currentFlashcard.answer
         
         //update buttons
-        btn2.setTitle(currentFlashcard.answer, for: UIControl.State.normal)
-        btn1.setTitle(currentFlashcard.extraAnswer1, for: UIControl.State.normal)
-        btn3.setTitle(currentFlashcard.extraAnswer2, for: UIControl.State.normal)
+        //btn2.setTitle(currentFlashcard.answer, for: UIControl.State.normal)
+        //btn1.setTitle(currentFlashcard.extraAnswer1, for: UIControl.State.normal)
+        //btn3.setTitle(currentFlashcard.extraAnswer2, for: UIControl.State.normal)
         
-        btn1.isHidden = false
-        btn2.isHidden = false
-        btn3.isHidden = false
+        //shuffle
+        let buttons = [btn1, btn2, btn3].shuffled()
+        let answers = [currentFlashcard.answer, currentFlashcard.extraAnswer1, currentFlashcard.extraAnswer2].shuffled()
+        
+        for(button, answer) in zip(buttons, answers){
+            button?.setTitle(answer, for: .normal)
+            
+            //if this button is correct
+            if answer == currentFlashcard.answer {
+                correctAnswerButton = button
+            }
+            if answer == currentFlashcard.extraAnswer1{
+                extraAnswerOneButton = button
+            }
+            if answer == currentFlashcard.extraAnswer2{
+                extraAnswerTwoButton = button
+            }
+            
+        }
+        
+        btn1.isEnabled = true
+        btn2.isEnabled = true
+        btn3.isEnabled = true
         frontLabel.isHidden = false
     }
     
@@ -264,23 +291,48 @@ class ViewController: UIViewController {
         if segue.identifier == "EditSegue"{
         creationController.initialQuestion = frontLabel.text
         creationController.initialAnswer = backLabel.text
-        creationController.initialExtraAnswer1 = btn1.currentTitle
-        creationController.initialExtraAnswer2 = btn3.currentTitle
+        creationController.initialExtraAnswer1 = extraAnswerOneButton.currentTitle
+        creationController.initialExtraAnswer2 = extraAnswerTwoButton.currentTitle
             
             
         }
     }
     
     @IBAction func didTapBtnOne(_ sender: Any) {
-        btn1.isHidden = true
+        //btn1.isHidden = true
+        if btn1 == correctAnswerButton{
+            flipFlashcard()
+        }
+        else{
+            frontLabel.isHidden = false
+            btn1.isEnabled = false
+            
+        }
     }
     
     @IBAction func didTapBtnTwo(_ sender: Any) {
-        self.frontLabel.isHidden = true
+        //self.frontLabel.isHidden = true
+        
+        if btn2 == correctAnswerButton{
+            flipFlashcard()
+        }
+        else{
+            frontLabel.isHidden = false
+            btn2.isEnabled = false
+            
+        }
     }
     
     @IBAction func didTapBtnThree(_ sender: Any) {
-        btn3.isHidden = true
+        //btn3.isHidden = true
+        if btn3 == correctAnswerButton{
+            flipFlashcard()
+        }
+        else{
+            frontLabel.isHidden = false
+            btn3.isEnabled = false
+            
+        }
     }
     
     //functions to animate right button
