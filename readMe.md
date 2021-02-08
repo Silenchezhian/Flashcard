@@ -3,7 +3,7 @@
 ## Lab 4
 
 ### App Description
-In addtion to past features, users can see a app icon and a splash screen. Additionally, they can toggel between questions and answers within a flashcard with a flip animation, and can scroll through different flashcards using a slide animation. In brief, this lab enhanced the visual features of the app. It has randomized multiple choice options, the second button is no longer the correct answer. The view has also been standardized for all iphones. 
+In addtion to past features, users can see a app icon and a splash screen. Additionally, they can toggle between questions and answers within a flashcard with a flip animation, and can scroll through different flashcards using a slide animation. In brief, this lab enhanced the visual features of the app. It has randomized multiple choice options, the second button is no longer the correct answer. The view has also been standardized for all iphones. 
 
 ### App Walk-though
 
